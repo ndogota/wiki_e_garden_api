@@ -3,7 +3,7 @@ const db = require("../models");
 const Plant = db.plant;
 
 exports.allPlants = (req, res) => {
-    db.plants.find({}, function(err, plants) {
+    Plant.find({}, function(err, plants) {
         if(err) {
             console.log(err);
         } else {
