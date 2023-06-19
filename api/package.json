@@ -1,0 +1,33 @@
+{
+  "name": "e-garden-api",
+  "version": "0.3.0",
+  "description": "The api of e-garden.",
+  "engines": {
+    "node": "16.x"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.5",
+    "express": "^4.15.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongodb": "^4.7.0",
+    "mongoose": "^6.5.4"
+  },
+  "devDependencies": {
+    "got": "^11.3.0",
+    "tape": "^4.7.0"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
+}
