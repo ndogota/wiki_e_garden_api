@@ -20,7 +20,6 @@ db.plant = require("./plant.model");
 db.plantConfig = require("./plantConfig.model");
 db.post = require("./post.model");
 db.product = require("./product.model");
-db.plantCategory = require("./plantCategory.model");
 db.plantFeatures = require("./plantFeatures.js");
 
 db.ROLES = ["user", "admin", "moderator"];
