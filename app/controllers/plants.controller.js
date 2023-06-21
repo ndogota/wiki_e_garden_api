@@ -104,3 +104,43 @@ exports.getPlantByName = (req, res) => {
     });
 };
 
+exports.getPlantById = (req, res) => {
+    const keyword = req.query.id; // Chaîne à rechercher dans le nom des plantes
+
+    Plant.find({ id: keyword}, (err, plants) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send("Une erreur s'est produite lors de la recherche des plantes.");
+        } else {
+            if (plants.length === 0) {
+                res.status(404).send("Aucune plante correspondante trouvée.");
+            } else {
+                plantFeatures.find({}, (err, features) => {
+                    if (err) {
+                        console.log(err);
+                        res.status(500).send("Une erreur s'est produite lors de la recherche des fonctionnalités des plantes.");
+                    } else {
+                        const updatedPlants = plants.map(plant => {
+                            const featurePlant = Object.entries(plant.attributes.features);
+                            let newFeaturePlant = [];
+                            featurePlant.forEach(([featurePlantId, featurePlantValue]) => {
+                                const feature = features.find(feature => feature.plantFeatureId == featurePlantId);
+                                newFeaturePlant.push({
+                                    "plantFeatureName": feature.plantFeatureName,
+                                    "values": {
+                                        [featurePlantValue]: feature.values[featurePlantValue]
+                                    }
+                                });
+                            });
+                            plant.attributes.features = newFeaturePlant;
+
+                            return plant;
+                        });
+
+                        res.status(200).json({ plants: updatedPlants });
+                    }
+                });
+            }
+        }
+    });
+};
