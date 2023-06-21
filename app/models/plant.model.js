@@ -1,22 +1,21 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const Plant = mongoose.model(
-    "Plant",
-    new mongoose.Schema({
-        name: {type: String, required: true},
+const plantSchema = new Schema({
+    plantId: {type: Number, required: true, unique: true},
+    name: {type: String, required: true},
+    attributes: {
         description: {type: String, required: true},
-        image: {type: String, required: true},
-        typePlant: String,
-        besoinEau: String,
-        expositionSoleil: String,
-        niveauEntretien: String,
-        antiInsecte: String,
-        niveauPh: String,
+        imageUrl: {type: String, required: true},
+        features : {},
         plantationDate: [],
-        recolteDate: [],
-        createdDate: { type: Date, default: Date.now() },
-        updatedDate: { type: Date, default: Date.now() }
-    })
-);
+        harvestDate: [],
+    },
+    createdDate: {type: Date, default: Date.now()},
+    updatedDate: {type: Date, default: Date.now()}
+});
 
-module.exports = Plant;
+const plantClass = mongoose.model('plants', plantSchema);
+
+module.exports = plantClass;
+
