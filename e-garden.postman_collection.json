@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "1137faf7-1627-44cd-86d1-fd7ce747163f",
+		"name": "e garden",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22090770"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://wiki-e-garden-api.onrender.com/plants",
+					"protocol": "https",
+					"host": [
+						"wiki-e-garden-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"plants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://wiki-e-garden-api.onrender.com/getPlantByName?name=tomate",
+					"protocol": "https",
+					"host": [
+						"wiki-e-garden-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"getPlantByName"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "tomate"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://wiki-e-garden-api.onrender.com/getPlantByName?name=tomate",
+					"protocol": "https",
+					"host": [
+						"wiki-e-garden-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"getPlantByName"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "tomate"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

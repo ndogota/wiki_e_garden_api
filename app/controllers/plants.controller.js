@@ -12,7 +12,7 @@ exports.allPlants = (req, res) => {
             plantFeatures.find({}, function (err, features) {
                 if (err) {
                     console.log(err);
-                    res.status(500).send("Une erreur s'est produite lors de la recherche des fonctionnalités des plantes.");
+                    res.status(200).send([]);
                 } else {
                     //console.log(features);
                     //console.log(plants);
@@ -72,7 +72,7 @@ exports.getPlantByName = (req, res) => {
             res.status(500).send("Une erreur s'est produite lors de la recherche des plantes.");
         } else {
             if (plants.length === 0) {
-                res.status(404).send("Aucune plante correspondante trouvée.");
+                res.status(200).send([]);
             } else {
                 plantFeatures.find({}, (err, features) => {
                     if (err) {
@@ -107,13 +107,13 @@ exports.getPlantByName = (req, res) => {
 exports.getPlantById = (req, res) => {
     const keyword = req.query.id; // Chaîne à rechercher dans le nom des plantes
 
-    Plant.find({ id: keyword}, (err, plants) => {
+    Plant.find({ plantId: keyword}, (err, plants) => {
         if (err) {
             console.log(err);
             res.status(500).send("Une erreur s'est produite lors de la recherche des plantes.");
         } else {
             if (plants.length === 0) {
-                res.status(404).send("Aucune plante correspondante trouvée.");
+                res.status(200).send([]);
             } else {
                 plantFeatures.find({}, (err, features) => {
                     if (err) {
