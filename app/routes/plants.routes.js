@@ -13,4 +13,6 @@ module.exports = function(app) {
     app.get("/plants", controller.allPlants);
 
     app.post("/createplant", controller.createPlant);
+    app.get("/getPlantByName", controller.getPlantByName);
+    app.get("/getPlantById", controller.getPlantById);
 };
