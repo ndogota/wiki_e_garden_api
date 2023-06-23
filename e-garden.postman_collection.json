@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "New Request",
+			"name": "get all plant",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -27,7 +27,7 @@
 			"response": []
 		},
 		{
-			"name": "New Request",
+			"name": "get By Name",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -53,7 +53,7 @@
 			"response": []
 		},
 		{
-			"name": "New Request Copy",
+			"name": "get By Id",
 			"request": {
 				"method": "GET",
 				"header": [],
